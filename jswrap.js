@@ -3,8 +3,8 @@
 var esprima, escodegen, _;
 
 module.exports = function (code, catchbody) {
-    esprima = esprima || require('esprima');
-    escodegen = escodegen || require('escodegen');
+    esprima = esprima || require('esprima-fb');
+    escodegen = escodegen || require('escodegen-wallaby');
     _ = _ || require('lodash');
 
     _.templateSettings = {
@@ -12,8 +12,9 @@ module.exports = function (code, catchbody) {
         interpolate: /\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g,  // {{ title }}
         escape:      /\{\{\{([\s\S]+?)\}\}\}/g,         // {{{ title }}}
     }
-
+    
     if (catchbody) {
+        
         var astbody = JSON.stringify(esprima.parse(catchbody).body);
         var catcher = function (fn_id) {
             return JSON.parse(astbody.replace('{{fn_id}}', fn_id));
@@ -24,13 +25,13 @@ module.exports = function (code, catchbody) {
         }
     }
 
-    var root = esprima.parse(code)
+    var root = esprima.parse(code, { sourceType: 'module'})
 
     var fns = []
 
     function isFn(el) {
         return el instanceof Object && !(el instanceof Array) &&
-               (el.type === 'FunctionDeclaration' || el.type === 'FunctionExpression');
+               (el.type === 'FunctionDeclaration' || el.type === 'FunctionExpression' || el.type === 'ArrowFunctionExpression');
     }
 
     function parse(root) {

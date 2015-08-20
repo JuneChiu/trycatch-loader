@@ -1,30 +1,33 @@
 {
-  "name": "jswrap",
+  "name": "trycatch-loader",
   "title": "JavaScript try-catch wrapper",
   "description": "Wraps every function in the try-catch statement",
-  "version": "0.1.6",
-  "main": "./jswrap.js",
-  "homepage": "https://github.com/grimalschi/jswrap",
-  "author": {
-    "name": "Veaceslav Grimalschi",
-    "email": "grimalschi@yandex.ru",
-    "url": "https://github.com/grimalschi"
-  },
+  "version": "0.1.0",
+  "main": "./index.js",
+  "homepage": "https://github.com/JuneChiu/trycatch-loader",
+  "author": "Grimalschi && JuneChiu <june.chiu.s@gmail.com> (https://github.com/JuneChiu)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/grimalschi/jswrap.git"
+    "url": "git://github.com/JuneChiu/trycatch-loader.git"
   },
-  "bugs": "https://github.com/grimalschi/jswrap/issues",
+  "bugs": {
+    "url": "https://github.com/JuneChiu/trycatch-loader/issues"
+  },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/grimalschi/jswrap/blob/master/LICENSE-MIT"
+      "url": "https://github.com/JuneChiu/trycatch-loader/blob/master/LICENSE-MIT"
     }
   ],
   "dependencies": {
-    "escodegen": "^1.4.3",
-    "esprima": "^1.2.2",
+    "escodegen-wallaby": "latest",
+    "esprima-fb": "latest",
     "lodash": "^2.4.1"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
 }
