@@ -2,7 +2,7 @@
 
 var esprima, escodegen, _;
 
-module.exports = function (code, catchbody) {
+module.exports = function (code, file, catchbody) {
     esprima = esprima || require('esprima-fb');
     escodegen = escodegen || require('escodegen-wallaby');
     _ = _ || require('lodash');
@@ -25,7 +25,7 @@ module.exports = function (code, catchbody) {
         }
     }
 
-    var root = esprima.parse(code, { sourceType: 'module'})
+    var root = esprima.parse(code, { sourceType: 'module', loc: true})
 
     var fns = []
 
@@ -45,7 +45,8 @@ module.exports = function (code, catchbody) {
 
     _.each(fns, function (fn, index) {
         // move nested functions outside the body
-        var nestedFns = [];
+        var nestedFns = [],
+            errorPosition = esprima.parse('e.position = "' + file + ' ' + fn.loc.start.line + ':' + fn.loc.end.line + '"');
 
         _.each(fn.body.body, function (el) {
             if (isFn(el)) {
@@ -71,7 +72,7 @@ module.exports = function (code, catchbody) {
                         },
                         "body": {
                             "type": "BlockStatement",
-                            "body": catcher(index)
+                            "body": errorPosition.body.concat(catcher(index))
                         }
                     }
                 ],
@@ -80,7 +81,7 @@ module.exports = function (code, catchbody) {
         ]);
     });
 
-    var result = escodegen.generate(root);
+    var result = escodegen.generate(root, {format: {preserveBlankLines: true}});
 
     return result;
 };
