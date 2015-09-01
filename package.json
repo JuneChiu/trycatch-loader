@@ -1,6 +1,6 @@
 {
-	"name": "react-modal",
-	"version": "0.1.5",
+	"name": "react-ui-modal",
+	"version": "0.1.1",
 	"description": "Modal react component by VIPSHOP H5 Team",
 	"main": "lib/modal.js",
 	"dependencies": {
@@ -31,14 +31,14 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/teambition/react-lite-dropdown.git"
+		"url": "git+https://github.com/JuneChiu/react-ui-modal.git"
 	},
 	"bugs": {
-		"url": "https://github.com/teambition/react-lite-dropdown/issues"
+		"url": "https://github.com/JuneChiu/react-ui-modal/issues"
 	},
-	"homepage": "https://github.com/teambition/react-lite-dropdown",
+	"homepage": "https://github.com/JuneChiu/react-ui-modal",
 	"maintainers": [{
-		"name": "jiyinyiyong",
-		"email": "jiyinyiyong@gmail.com"
+		"name": "june.chiu",
+		"email": "june.chiu.s@gmail.com"
 	}]
 }
