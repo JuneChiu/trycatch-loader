@@ -1,33 +1,44 @@
 {
-  "name": "trycatch-loader",
-  "title": "JavaScript try-catch wrapper",
-  "description": "Wraps every function in the try-catch statement",
-  "version": "0.2.0",
-  "main": "./index.js",
-  "homepage": "https://github.com/JuneChiu/trycatch-loader",
-  "author": "Grimalschi && JuneChiu <june.chiu.s@gmail.com> (https://github.com/JuneChiu)",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/JuneChiu/trycatch-loader.git"
-  },
-  "bugs": {
-    "url": "https://github.com/JuneChiu/trycatch-loader/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/JuneChiu/trycatch-loader/blob/master/LICENSE-MIT"
-    }
-  ],
-  "dependencies": {
-    "escodegen-wallaby": "latest",
-    "esprima-fb": "latest",
-    "lodash": "^2.4.1"
-  },
-  "keywords": [],
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "ISC"
+	"name": "react-modal",
+	"version": "0.1.5",
+	"description": "Modal react component by VIPSHOP H5 Team",
+	"main": "lib/modal.js",
+	"dependencies": {
+		"react": "^0.13.3",
+		"classnames": "^2.1.0"
+	},
+	"devDependencies": {
+		"babel-loader": "latest",
+		"babel-runtime": "latest",
+		"style-loader": "latest",
+		"css-loader": "latest",
+		"stylus-loader": "latest",
+		"nib": "latest"
+	},
+	"scripts": {
+		"demo": "webpack-dev-server --hot",
+		"compile": "babel -d lib/ src/",
+		"prepublish": "npm run compile",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"react-component",
+		"modal"
+	],
+	"author": {
+		"name": "VIPSHOP june.chiu"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/teambition/react-lite-dropdown.git"
+	},
+	"bugs": {
+		"url": "https://github.com/teambition/react-lite-dropdown/issues"
+	},
+	"homepage": "https://github.com/teambition/react-lite-dropdown",
+	"maintainers": [{
+		"name": "jiyinyiyong",
+		"email": "jiyinyiyong@gmail.com"
+	}]
 }
