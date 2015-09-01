@@ -1,44 +1,27 @@
 {
-	"name": "react-ui-modal",
-	"version": "0.1.1",
-	"description": "Modal react component by VIPSHOP H5 Team",
-	"main": "lib/modal.js",
-	"dependencies": {
-		"react": "^0.13.3",
-		"classnames": "^2.1.0"
-	},
-	"devDependencies": {
-		"babel-loader": "latest",
-		"babel-runtime": "latest",
-		"style-loader": "latest",
-		"css-loader": "latest",
-		"stylus-loader": "latest",
-		"nib": "latest"
-	},
-	"scripts": {
-		"demo": "webpack-dev-server --hot",
-		"compile": "babel -d lib/ src/",
-		"prepublish": "npm run compile",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [
-		"react-component",
-		"modal"
-	],
+	"name": "trycatch-loader",
+	"title": "JavaScript try-catch wrapper",
+	"description": "Wraps every function in the try-catch statement",
+	"version": "0.2.0",
+	"main": "./index.js",
+	"homepage": "https://github.com/JuneChiu/trycatch-loader",
 	"author": {
-		"name": "VIPSHOP june.chiu"
+		"name": "Grimalschi && JuneChiu",
+		"email": "june.chiu.s@gmail.com",
+		"url": "https://github.com/JuneChiu"
 	},
-	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/JuneChiu/react-ui-modal.git"
+		"url": "git://github.com/JuneChiu/trycatch-loader.git"
 	},
-	"bugs": {
-		"url": "https://github.com/JuneChiu/react-ui-modal/issues"
+	"licenses": "MIT",
+	"dependencies": {
+		"escodegen-wallaby": "latest",
+		"esprima-fb": "latest",
+		"lodash": "^2.4.1"
 	},
-	"homepage": "https://github.com/JuneChiu/react-ui-modal",
-	"maintainers": [{
-		"name": "june.chiu",
-		"email": "june.chiu.s@gmail.com"
-	}]
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"license": "ISC"
 }
